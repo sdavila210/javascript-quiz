@@ -11,8 +11,8 @@ body {
     margin: 0 auto;
   }
   
-  #start-screen,
-  #end-screen {
+  #start,
+  #end {
     background-color: #fff;
     padding: 20px;
     margin-top: 20px;
