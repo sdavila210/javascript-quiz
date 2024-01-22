@@ -3,27 +3,27 @@ var questions = [
     {
         question: "Inside which HTML element do we put the Javascript?",
         choices: ["<js>", "<javascript>", "<script>", "<scripting>"],
-        answer: "<script>"
+        correctAnswer: "<script>"
     },
     {
         question: "What is the correct way to write a comment in Javascript?",
         choices: ["// my comment", "# my comment", "\\ my comment", "<! my comment"],
-        answer: "// my comment"
+        correctAnswer: "// my comment"
     },
     {
         question: "What is an array?",
         choices: ["A true false value", "A structure that allows you to store multiple values in a single reference", "a sequence of text in quotation marks", "None of the above"],
-        answer: "A structure that allows you to store multiple values in a single reference" 
+        correctAnswer: "A structure that allows you to store multiple values in a single reference" 
     },
     {
         question: "Which of the following is a javascript data type?",
         choices: ["A string", "A number", "A Boolean", "All of the above"],
-        answer: "All of the above"
+        correctAnswer: "All of the above"
     },
     {
         questions: "What is a boolean?",
         choices: ["A number", "A comment", "A true/false value", "An operator"],
-        answer: "A true/false value"
+        correctAnswer: "A true/false value"
     }
   ];
 
@@ -44,6 +44,7 @@ startButton.addEventListener("click", startQuiz);
 //function that starts the timer when you start the quiz
 function startQuiz() {
     timer = setInterval(updateTimer, 1000)
+    displayQuestion();
     };
 
 //function that tells timer to keep going if there is time left and displays it on screen
@@ -57,4 +58,48 @@ function updateTimer() {
 //This function is what happens at the end of the quiz and will stop the timer
 function endQuiz() {
     clearInterval(timer);
+    results.style.display = "block";
+    finalScore.textContet = score;
   }
+
+//creates variable using getElementById to make questions, choices, and final score interact with HTML
+var questionText = document.getElementById("question-text");
+var choicesList = document.getElementById("choices");
+var results = document.getElementById("end");
+
+//keeps track of the index of the current questions and starts score at 0
+var currentQuestionIndex = 0;
+var score = 0;
+
+//function to display the actual questions one at a time. use .length to check the current question to the number of questions in the question arrays
+function displayQuestion () {
+    if (currentQuestionIndex < questions.length) {
+        var currentQuestion = questions[currentQuestionIndex];
+        questionText.textContent = currentQuestion.question;
+        //content inside choicesList is removed so that new choices appear with each question. Also creates list item for each choice, adds event listener when user clicks, and appends list item
+        choicesList.innerHTML = "";
+        currentQuestion.choices.forEach((choice) => {
+          var li = document.createElement("li");
+          li.textContent = choice;
+          li.addEventListener("click", () => checkAnswer(choice));
+          choicesList.appendChild(li);
+        });
+    }
+    }
+//function checks to see if the answer is correct and adds a point to the score if it is. If it is incorrect, it subtracts 10 seconds from the time
+function checkAnswer(selectedChoice) {
+        var currentQuestion = questions[currentQuestionIndex];
+    
+        if (selectedChoice === currentQuestion.correctAnswer) {
+          score++;
+        } 
+        else {
+          timeLeft -= 10;
+          if (timeLeft < 0) {
+            timeLeft = 0;
+          }
+        }
+        //displays the next question in the index of questions
+        currentQuestionIndex++;
+        displayQuestion();
+      }
