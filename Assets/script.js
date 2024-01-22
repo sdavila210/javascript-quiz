@@ -63,7 +63,7 @@ function endQuiz() {
     clearInterval(timer);
     quizContainer.style.display = "none";
     results.style.display = "block";
-    finalScore.textContet = score;
+    finalScore.textContent = score;
     displayHighScores();
   }
 
