@@ -5,15 +5,46 @@ body {
     padding: 0;
     text-align: center;
   }
-
-  .container {
-    max-width: 600px;
-    margin: 0 auto;
-  }
   
   #start,
   #end {
     background-color: #fff;
     padding: 20px;
     margin-top: 20px;
+  }
+
+  #quiz-container,
+  #end {
+    display: none;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    background-color: rgb(235, 123, 142);
+    color: #fff;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 4px;
+  }
+  
+  li:hover {
+    background-color: #e91764;
+  }
+  
+  button {
+    background-color: pink;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 10px;
+  }
+  
+  button:hover {
+    background-color: rgb(235, 123, 142);
   }
