@@ -24,7 +24,33 @@ var questions = [
         question: "What is a boolean?",
         choices: ["A number", "A comment", "A true/false value", "An operator"],
         answer: "A true/false value"
+    },
+    {
+        question: "How do you write a function?",
+        choices: ["function myFunction()", "function = myFunction()", "function: myFunction()", "None of the above"],
+        answer: "function myFunction()"
+    },
+    {
+        question: "What is the correct syntax for referring to an external script?",
+        choices: ["<script src=....>", "<script name=...>", "<script href=...>", "None of the above"],
+        answer: "<script src=....>"
+    },
+    {
+        question: "How do you write an alert box?",
+        choices: ["msg(...);", "alert(...)", "alertBox(...)", "msgBox(...)"],
+        answer: "alert(...)"
+    },
+    {
+        question: "How do you declare a Javascript variable?",
+        choices: ["variable myVariable", "v myVariable", "var myVariable", "vars myVariable"],
+        answer: "var myVariable"
+    },
+    {
+        question: "Which operator is used to assign a value to a variable?",
+        choices: ["+", "-", "*", "="],
+        answer: "="
     }
+
   ];
 
 //uses the get.ElementById to be able to interact with the button, timer, scores, and initials that corresponds to HTML ID's

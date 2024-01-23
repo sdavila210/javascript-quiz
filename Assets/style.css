@@ -1,3 +1,4 @@
+/*adds font, background color, margin, padding to page*/
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
@@ -5,7 +6,7 @@ body {
     padding: 0;
     text-align: center;
   }
-  
+  /*adds background color to start and end element sections*/
   #start,
   #end {
     background-color: #fff;
@@ -13,16 +14,19 @@ body {
     margin-top: 20px;
   }
 
+  /*hides the quiz container and end which displays the high scores. used functions to display these areas when a button was clicked*/
   #quiz-container,
   #end {
     display: none;
   }
   
+  /*takes away the bullets and defines the padding for the list*/
   ul {
     list-style-type: none;
     padding: 0;
   }
   
+  /*defines the background color of list items, font color, padding, margin and border radius*/
   li {
     background-color: rgb(235, 123, 142);
     color: #fff;
@@ -31,10 +35,12 @@ body {
     border-radius: 4px;
   }
   
+  /*changes color when you hover over a list item*/
   li:hover {
     background-color: #e91764;
   }
   
+  /*defines the backgroun color,padding, font size, border and margins of the buttons*/
   button {
     background-color: pink;
     color: #fff;
@@ -45,6 +51,7 @@ body {
     margin-top: 10px;
   }
   
+  /*changes color of the button when you hover over it*/
   button:hover {
     background-color: rgb(235, 123, 142);
   }
